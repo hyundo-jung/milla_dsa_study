@@ -45,7 +45,7 @@ int main(void)
 
 	for (int i = 0; i < 18; i++)
 	{
-		for (int j = 0; j < 18; j++)
+		for (int j = i + 1; j < 18; j++)
 		{
             if (i != j) // 같은 카드를 두번 뽑을 수 없기에
             {
@@ -54,6 +54,6 @@ int main(void)
         }
 	}
 
-	printf("%.3f \n", (double)win / (18 * 17));
+	printf("%.3f \n", (double)win / (18 * 17/2));
 	return 0;
 }
