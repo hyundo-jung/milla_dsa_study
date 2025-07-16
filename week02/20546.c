@@ -32,10 +32,15 @@ int timing(void)
             up++;
             down = 0;
         }
-        if (MachineDuck[i] < MachineDuck[i - 1]) // 전일대비 하락
+        else if (MachineDuck[i] < MachineDuck[i - 1]) // 전일대비 하락
         {
             down++;
             up = 0;
+        }
+        else
+        {
+            up = 0;
+            down = 0;
         }
 
         if (up == 3)
@@ -62,8 +67,13 @@ int main(void)
     scanf("%d", &cash);
     getchar();
 
-    scanf("%d %d %d %d %d %d %d %d %d %d %d %d %d %d", &MachineDuck[0], &MachineDuck[1], &MachineDuck[2], &MachineDuck[3], &MachineDuck[4], &MachineDuck[5], &MachineDuck[6], &MachineDuck[7], &MachineDuck[8], &MachineDuck[9], &MachineDuck[10], &MachineDuck[11], &MachineDuck[12], &MachineDuck[13]);
+    // scanf("%d %d %d %d %d %d %d %d %d %d %d %d %d %d", &MachineDuck[0], &MachineDuck[1], &MachineDuck[2], &MachineDuck[3], &MachineDuck[4], &MachineDuck[5], &MachineDuck[6], &MachineDuck[7], &MachineDuck[8], &MachineDuck[9], &MachineDuck[10], &MachineDuck[11], &MachineDuck[12], &MachineDuck[13]);
 
+    for (int i = 0; i < 14; i++)
+    {
+        scanf("%d", &MachineDuck[i]);
+    }
+    
     int x = bnp();
     int y = timing();
 
